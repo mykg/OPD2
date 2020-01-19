@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText userEmail;
     EditText userPass;
     Button userLogin;
+    Button forgotPass;
 
     FirebaseAuth firebaseAuth;
 
@@ -38,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         userEmail = findViewById(R.id.UserEmail);
         userPass = findViewById(R.id.UserPass);
         userLogin = findViewById(R.id.UserLogin);
+        forgotPass = findViewById(R.id.ForgotPass);
 
         toolbar.setTitle("Login");
 
@@ -52,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressBar.setVisibility(View.GONE);
                         if(task.isSuccessful()){
-                            startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                         }
                         else{
                             Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -60,6 +62,13 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
             }
         });
     }

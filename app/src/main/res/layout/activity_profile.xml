@@ -15,14 +15,6 @@
         android:textSize="30sp"
         android:layout_height="wrap_content" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:text="hello"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="5dp"
-        app:contentPadding="5dp" />
-
 
     <Button
         android:id="@+id/Logout"
@@ -31,4 +23,14 @@
         android:layout_gravity="bottom"
         android:text="sign out" />
 
+    <Button
+        android:id="@+id/UserForgotPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Forgot Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login"
+        tools:ignore="MissingConstraints" />
 </LinearLayout>

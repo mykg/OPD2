@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseAuth firebaseauth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseauth.getCurrentUser();
         if(firebaseUser != null){
-            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
         }
         setContentView(R.layout.activity_main);
 
@@ -98,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
                             password.getText().clear();
                             address.getText().clear();
                             aadharno.getText().clear();
+
+                            startActivity(new Intent(MainActivity.this,HomeActivity.class));
                         }else{
                             Toast.makeText(MainActivity.this, task.getException().getMessage(),
                                     Toast.LENGTH_LONG).show();
@@ -114,13 +116,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            }
-        });
-
-        forgotPass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ForgotPasswordActivity.class));
             }
         });
 
